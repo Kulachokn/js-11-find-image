@@ -5,3 +5,51 @@
 
 // Стили для файла с примером HTML-фрагмента
 @import './example';
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 270px;
+  height: auto;
+  object-fit: cover;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photo-card {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.wrap {
+  background-size: cover;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 14px;
+  align-items: center;
+  color: #333333;
+}
