@@ -9,9 +9,7 @@ export default {
 
   async fetchImages() {
     const url = `${this.baseUrl}?image_type=photo&orientation=horizontal&q=${this.searchQuery}&per_page=${this.perPage}&key=${this.key}&page=${this.page}`;
-
     const response = await axios.get(url)
-    console.log(response.data);
     return response.data;
   },
 }

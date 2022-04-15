@@ -19,10 +19,7 @@ refs.loadMore.addEventListener('click', handleLoadMore);
 function handleForm(e) {
   e.preventDefault();
 
-  let inputText = refs.input.value;
-  apiService.searchQuery = inputText;
-
-  console.log(inputText);
+  apiService.searchQuery = refs.input.value;
   refs.gallery.innerHTML = '';
   apiService.page = 1;
 
@@ -35,8 +32,6 @@ async function fetchImages() {
   try {
     refs.loadMore.classList.add('is-hidden');
     const {hits: images, totalHits} = await apiService.fetchImages()
-    // console.log(images);
-    // console.log(totalHits);
 
     if (totalHits === 0) {
       Notify.failure("Sorry, there are no images matching your search query. Please try again.");
@@ -57,7 +52,6 @@ async function fetchImages() {
     renderCard(images);
     simple.refresh();
 
-
     const {height: cardHeight} = document
       .querySelector('.gallery')
       .firstElementChild.getBoundingClientRect();
@@ -72,9 +66,8 @@ async function fetchImages() {
 }
 
 function handleLoadMore() {
-  fetchImages();
   apiService.page += 1;
-  console.log(apiService.page)
+  fetchImages();
 }
 
 function renderCard(images) {
